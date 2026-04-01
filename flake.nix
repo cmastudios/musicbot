@@ -31,7 +31,7 @@
           };
         };
       in {
-        packages.rubychan = rubychan;
+        packages.default = rubychan;
 
         devShells.default = pkgs.mkShell {
           buildInputs = [ python pkgs.ffmpeg pkgs.deno ] ++ rubychanDeps;
