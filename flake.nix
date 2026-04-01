@@ -33,6 +33,13 @@
       in {
         packages.default = rubychan;
 
+        apps.default = {
+          type = "app";
+          program = "${rubychan}/bin/rubychan-bot";
+        };
+
+        defaultApp = self.apps.${system}.default;
+
         devShells.default = pkgs.mkShell {
           buildInputs = [ python pkgs.ffmpeg pkgs.deno ] ++ rubychanDeps;
           shellHook = ''
